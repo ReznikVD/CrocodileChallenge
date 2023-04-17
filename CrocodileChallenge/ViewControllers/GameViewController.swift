@@ -8,11 +8,6 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    struct Spec {
-        static var
-    }
-
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -93,6 +88,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         addSubviews()
         setupConstraints()
+        configureButtons()
     }
 }
 
@@ -103,10 +99,10 @@ extension GameViewController {
         backgroundImageView.addSubview(timerLabel)
         backgroundImageView.addSubview(wordLabel)
         backgroundImageView.addSubview(taskLabel)
-        backgroundImageView.addSubview(buttonsStackView)
         buttonsStackView.addArrangedSubview(rightButton)
         buttonsStackView.addArrangedSubview(brokeRulesButton)
         buttonsStackView.addArrangedSubview(cancelButton)
+        backgroundImageView.addSubview(buttonsStackView)
     }
 
     private func setupConstraints() {
@@ -142,5 +138,30 @@ extension GameViewController {
             brokeRulesButton.heightAnchor.constraint(equalToConstant: 60),
             cancelButton.heightAnchor.constraint(equalToConstant: 60)
         ])
+    }
+
+    private func configureButtons() {
+        rightButton.addTarget(self, action: #selector(rightButtonAction), for: .touchUpInside)
+        brokeRulesButton.addTarget(self, action: #selector(brokeRulesButtonAction), for: .touchUpInside)
+        cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
+    }
+
+    @objc
+    private func rightButtonAction() {
+        print("right")
+    }
+
+    @objc
+    private func brokeRulesButtonAction() {
+        print("broke")
+    }
+
+    @objc
+    private func cancelButtonAction() {
+        let alert = UIAlertController(title: "Сбросить игру?", message: "Вы хотите сбросить вашу игру и вернуться в главное меню?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
+        let agreementAction = UIAlertAction(title: "Да", style: .default)
+        alert.addAction(cancelAction)
+        alert.addAction(agreementAction)
     }
 }

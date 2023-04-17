@@ -8,7 +8,6 @@
 import UIKit
 
 class CustomButton: UIButton {
-
     init(title: String, color: UIColor) {
         super.init(frame: .zero)
         setTitle(title, for: .normal)
