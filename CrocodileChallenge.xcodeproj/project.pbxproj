@@ -21,6 +21,8 @@
 		7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847F29ED504900F87CF4 /* WrongViewController.swift */; };
 		7A9B848229ED50B400F87CF4 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */; };
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
+		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
+		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7A9B847F29ED504900F87CF4 /* WrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongViewController.swift; sourceTree = "<group>"; };
 		7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
+		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
+		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		7A9B845C29ED4D8000F87CF4 /* CrocodileChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				8E91DB4D29EDC4680087DB00 /* Components */,
+				8E91DB4829ED95120087DB00 /* SupportingFiles */,
 				7A9B847429ED4E4000F87CF4 /* Data */,
 				7A9B847329ED4E0800F87CF4 /* Views */,
 				7A9B847229ED4DFF00F87CF4 /* ViewControllers */,
@@ -121,6 +127,22 @@
 				7A9B847129ED4DF500F87CF4 /* Model */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		8E91DB4829ED95120087DB00 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8E91DB4629ED950D0087DB00 /* Resourses.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8E91DB4D29EDC4680087DB00 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8E91DB4929ED9C910087DB00 /* CustomButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */,
 				7A7F27BD29ED632000625ED0 /* TestView.swift in Sources */,
 				7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */,
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
+				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
