@@ -12,11 +12,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let scene = (scene as? UIWindowScene) else { return }
+    
         
-        window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainViewController()
-        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+              
+              // инициализируем наше окно
+              window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+              window?.windowScene = windowScene
+              
+              // инициализируем наш главный view controller
+              let viewController = TeamViewController()
+              let navigationController = UINavigationController(rootViewController: viewController)
+              
+              window?.rootViewController = navigationController
+              window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

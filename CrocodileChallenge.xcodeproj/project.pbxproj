@@ -103,7 +103,7 @@
 			children = (
 				7A9B846129ED4D8000F87CF4 /* MainViewController.swift */,
 				7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */,
-				7A9B847729ED4FDF00F87CF4 /* TeamViewController.swift */,
+				852C730229EE71A300AED2F2 /* Team */,
 				7A9B847929ED500200F87CF4 /* CategoryViewController.swift */,
 				7A9B847B29ED501500F87CF4 /* GameViewController.swift */,
 				7A9B847D29ED503D00F87CF4 /* CorrectViewController.swift */,
@@ -223,6 +223,7 @@
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
+				852C730429EE720F00AED2F2 /* TeamTableViewCell.swift in Sources */,
 				7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */,
 				7A9B847829ED4FDF00F87CF4 /* TeamViewController.swift in Sources */,
 				7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */,
