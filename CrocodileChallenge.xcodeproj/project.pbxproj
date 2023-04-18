@@ -21,6 +21,7 @@
 		7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847F29ED504900F87CF4 /* WrongViewController.swift */; };
 		7A9B848229ED50B400F87CF4 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */; };
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
+		852C730429EE720F00AED2F2 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C730329EE720F00AED2F2 /* TeamTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7A9B847F29ED504900F87CF4 /* WrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongViewController.swift; sourceTree = "<group>"; };
 		7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
+		852C730329EE720F00AED2F2 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,7 @@
 			children = (
 				7A9B846129ED4D8000F87CF4 /* MainViewController.swift */,
 				7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */,
-				7A9B847729ED4FDF00F87CF4 /* TeamViewController.swift */,
+				852C730229EE71A300AED2F2 /* Team */,
 				7A9B847929ED500200F87CF4 /* CategoryViewController.swift */,
 				7A9B847B29ED501500F87CF4 /* GameViewController.swift */,
 				7A9B847D29ED503D00F87CF4 /* CorrectViewController.swift */,
@@ -121,6 +123,15 @@
 				7A9B847129ED4DF500F87CF4 /* Model */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		852C730229EE71A300AED2F2 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				7A9B847729ED4FDF00F87CF4 /* TeamViewController.swift */,
+				852C730329EE720F00AED2F2 /* TeamTableViewCell.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +210,7 @@
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
+				852C730429EE720F00AED2F2 /* TeamTableViewCell.swift in Sources */,
 				7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */,
 				7A9B847829ED4FDF00F87CF4 /* TeamViewController.swift in Sources */,
 				7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */,
