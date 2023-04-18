@@ -14,13 +14,14 @@
 		7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B846129ED4D8000F87CF4 /* MainViewController.swift */; };
 		7A9B846729ED4D8100F87CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A9B846629ED4D8100F87CF4 /* Assets.xcassets */; };
 		7A9B846A29ED4D8100F87CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A9B846829ED4D8100F87CF4 /* LaunchScreen.storyboard */; };
-		7A9B847829ED4FDF00F87CF4 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847729ED4FDF00F87CF4 /* TeamViewController.swift */; };
 		7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847929ED500200F87CF4 /* CategoryViewController.swift */; };
 		7A9B847C29ED501500F87CF4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847B29ED501500F87CF4 /* GameViewController.swift */; };
 		7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847D29ED503D00F87CF4 /* CorrectViewController.swift */; };
 		7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B847F29ED504900F87CF4 /* WrongViewController.swift */; };
 		7A9B848229ED50B400F87CF4 /* GameResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */; };
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
+		7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */; };
+		7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */; };
 		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
 		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
@@ -35,13 +36,14 @@
 		7A9B846629ED4D8100F87CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A9B846929ED4D8100F87CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A9B846B29ED4D8100F87CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A9B847729ED4FDF00F87CF4 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7A9B847929ED500200F87CF4 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		7A9B847B29ED501500F87CF4 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		7A9B847D29ED503D00F87CF4 /* CorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectViewController.swift; sourceTree = "<group>"; };
 		7A9B847F29ED504900F87CF4 /* WrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongViewController.swift; sourceTree = "<group>"; };
 		7A9B848129ED50B400F87CF4 /* GameResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultViewController.swift; sourceTree = "<group>"; };
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
+		7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = CrocodileChallenge/Views/Cells/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +105,7 @@
 			children = (
 				7A9B846129ED4D8000F87CF4 /* MainViewController.swift */,
 				7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */,
-				852C730229EE71A300AED2F2 /* Team */,
+				7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */,
 				7A9B847929ED500200F87CF4 /* CategoryViewController.swift */,
 				7A9B847B29ED501500F87CF4 /* GameViewController.swift */,
 				7A9B847D29ED503D00F87CF4 /* CorrectViewController.swift */,
@@ -116,6 +118,7 @@
 		7A9B847329ED4E0800F87CF4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AF7E23C29EEEDC600CDD2F9 /* Cells */,
 				7A7F27BC29ED632000625ED0 /* TestView.swift */,
 			);
 			path = Views;
@@ -127,6 +130,14 @@
 				7A9B847129ED4DF500F87CF4 /* Model */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		7AF7E23C29EEEDC600CDD2F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		8E91DB4829ED95120087DB00 /* SupportingFiles */ = {
@@ -216,16 +227,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */,
+				7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */,
 				7A7F27BD29ED632000625ED0 /* TestView.swift in Sources */,
 				7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */,
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
+				7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */,
 				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
-				852C730429EE720F00AED2F2 /* TeamTableViewCell.swift in Sources */,
 				7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */,
-				7A9B847829ED4FDF00F87CF4 /* TeamViewController.swift in Sources */,
 				7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */,
 				7A9B847C29ED501500F87CF4 /* GameViewController.swift in Sources */,
 				7A9B846029ED4D8000F87CF4 /* SceneDelegate.swift in Sources */,
