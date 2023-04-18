@@ -25,5 +25,11 @@ enum Resources {
         static let littleCrocodile = "littleCrocodile"
         static let bigCrocodile = "bigCrocodile"
         static let star = "star"
+        static let cowboy = "cowboy"
+        static let burger = "burger"
+        static let frog = "frog"
+        static let nails = "nails"
+        static let circle = "circle"
+        static let check = "check"
     }
 }

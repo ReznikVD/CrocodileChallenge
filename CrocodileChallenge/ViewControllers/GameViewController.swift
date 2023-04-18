@@ -8,6 +8,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    // MARK: - Subviews
+    
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,6 +86,8 @@ class GameViewController: UIViewController {
         let button = CustomButton(title: "Сбросить", color: UIColor(named: Resources.Colors.gray)!)
         return button
     }()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +96,8 @@ class GameViewController: UIViewController {
         configureButtons()
     }
 }
+
+// MARK: - Private Extension
 
 extension GameViewController {
     private func addSubviews() {

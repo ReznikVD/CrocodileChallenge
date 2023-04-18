@@ -9,8 +9,9 @@ import UIKit
 
 class TeamTableViewCell: UITableViewCell {
     
-    private var model: [CellModel] = CellModel.makeModel()
-    lazy var indexPathSection = IndexPath()
+    static let identifier = "TeamTableViewCell"
+    
+    // MARK: - Subviews
     
     private lazy var containerView: UIView = {
         let view = UIView()
@@ -26,17 +27,35 @@ class TeamTableViewCell: UITableViewCell {
         return image
     }()
     
-    func setupCell(indexPath: IndexPath) {
-        indexPathSection = indexPath
-        avatarIcon.image = model[indexPath.row].image
-        layout()
-        backgroundColor = .clear
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super .init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCell()
     }
     
-    private func layout() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Private Extension
+
+private extension TeamTableViewCell {
+    func setupCell() {
+        
+        backgroundColor = .clear
+        selectionStyle = .none
+        
         addSubview(containerView)
         containerView.addSubview(avatarIcon)
         
+        setupConstraints()
+    }
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 28),
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -49,20 +68,12 @@ class TeamTableViewCell: UITableViewCell {
             avatarIcon.widthAnchor.constraint(equalToConstant: 56)
         ])
     }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super .init(style: style, reuseIdentifier: reuseIdentifier)
-        layout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
 
-extension UIView {
-    static var identifier : String {
-        String(describing: self)
+// MARK: - Internal Extension
+
+extension TeamTableViewCell {
+    func setupCell(with image: UIImage) {
+        avatarIcon.image = image
     }
 }
-
