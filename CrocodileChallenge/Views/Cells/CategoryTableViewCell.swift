@@ -1,19 +1,19 @@
 //
-//  TeamCollectionViewCell.swift
+//  CategoryTableViewCell.swift
 //  CrocodileChallenge
 //
-//  Created by Marat Guseynov on 18.04.2023.
+//  Created by Marat Guseynov on 19.04.2023.
 //
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell {
+class CategoryTableViewCell: UITableViewCell {
     
-    static let identifier = "TeamTableViewCell"
+    static let identifier = "CategoryTableViewCell"
     
     // MARK: - Subviews
     
-    private lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.backgroundColor = .white
@@ -31,8 +31,15 @@ class TeamTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = .black
+        label.textColor = .white
         return label
+    }()
+    
+    lazy var checkMarkImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "check")
+        return image
     }()
     
     // MARK: - Properties
@@ -51,7 +58,8 @@ class TeamTableViewCell: UITableViewCell {
 
 // MARK: - Private Extension
 
-private extension TeamTableViewCell {
+private extension CategoryTableViewCell {
+    
     func setupCell() {
         
         backgroundColor = .clear
@@ -78,15 +86,29 @@ private extension TeamTableViewCell {
             
             cellLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 37),
             cellLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -37),
-            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
         ])
     }
 }
 
 // MARK: - Internal Extension
 
-extension TeamTableViewCell {
-    func setupCell(with image: UIImage) {
+extension CategoryTableViewCell {
+    func setupCell(image: UIImage, color: UIColor) {
         avatarIcon.image = image
+        containerView.backgroundColor = color
+    }
+}
+
+extension CategoryTableViewCell {
+    func setupCheckMarkImage() {
+        containerView.addSubview(checkMarkImage)
+        
+        NSLayoutConstraint.activate([
+            checkMarkImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            checkMarkImage.heightAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.widthAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
+        ])
     }
 }

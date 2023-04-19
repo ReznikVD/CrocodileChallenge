@@ -21,7 +21,7 @@ class TeamViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-  
+    
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: Resources.Images.background))
         image.contentMode = .scaleAspectFill
@@ -31,12 +31,18 @@ class TeamViewController: UIViewController {
     
     private lazy var startButton: CustomButton = {
         let button = CustomButton(title: "Игроки готовы", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func startButtonPressed() {
+        navigationController?.pushViewController(CategoryViewController(), animated: true)
+    }
     
     // MARK: - Properties
     
     private var arrayOfImages = [Resources.Images.cowboy, Resources.Images.burger]
+    private var arrayOfCellLabelTexts = ["Ковбои", "Стройняшки"]
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
@@ -61,7 +67,7 @@ private extension TeamViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
-            ]
+        ]
     }
     
     func addViews() {
@@ -104,6 +110,7 @@ extension TeamViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.identifier, for: indexPath) as! TeamTableViewCell
         cell.setupCell(with: UIImage(named: arrayOfImages[indexPath.row])!)
+        cell.cellLabel.text = arrayOfCellLabelTexts[indexPath.row]
         return cell
     }
     
