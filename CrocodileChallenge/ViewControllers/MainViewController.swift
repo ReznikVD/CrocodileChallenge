@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         return image
     }()
     
-    private lazy var leavesImage1: UIImageView = {
+    private lazy var firstGrass: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: Resources.Images.grass)
@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var leavesImage2: UIImageView = {
+    private lazy var secondGrass: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: Resources.Images.grass)
@@ -92,15 +92,15 @@ class MainViewController: UIViewController {
                 rulesButton.heightAnchor.constraint(equalToConstant: 63),
                 rulesButton.widthAnchor.constraint(equalToConstant: 211),
                 
-                leavesImage1.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-                leavesImage1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-                leavesImage1.heightAnchor.constraint(equalToConstant: 70),
-                leavesImage1.widthAnchor.constraint(equalToConstant: 95),
+                firstGrass.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+                firstGrass.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+                firstGrass.heightAnchor.constraint(equalToConstant: 70),
+                firstGrass.widthAnchor.constraint(equalToConstant: 95),
                 
-                leavesImage2.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-                leavesImage2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-                leavesImage2.heightAnchor.constraint(equalToConstant: 70),
-                leavesImage2.widthAnchor.constraint(equalToConstant: 95),
+                secondGrass.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+                secondGrass.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+                secondGrass.heightAnchor.constraint(equalToConstant: 70),
+                secondGrass.widthAnchor.constraint(equalToConstant: 95),
           ])
     }
         
@@ -109,18 +109,24 @@ class MainViewController: UIViewController {
             view.addSubview(crocodileImage)
             view.addSubview(startButton)
             view.addSubview(rulesButton)
-            view.addSubview(leavesImage1)
-            view.addSubview(leavesImage2)
+            view.addSubview(firstGrass)
+            view.addSubview(secondGrass)
             //view.sendSubviewToBack(backgroundImage)
             setupConstraints()
         }
         
         private func configureButtons() {
             startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+            rulesButton.addTarget(self, action: #selector(startRulesAction), for: .touchUpInside)
         }
         @objc
         private func startButtonAction(){
             let vc = TeamViewController() 
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        @objc
+        private func startRulesAction(){
+            let vc = RoolsViewContoller() 
             navigationController?.pushViewController(vc, animated: true)
         }
     }
