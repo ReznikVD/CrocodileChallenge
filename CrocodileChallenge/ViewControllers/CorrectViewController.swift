@@ -9,6 +9,8 @@ import UIKit
 
 class CorrectViewController: UIViewController {
 	
+    // MARK: - Subviews
+    
 	private lazy var backgroundImage: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: Resources.Images.background)
@@ -49,23 +51,26 @@ class CorrectViewController: UIViewController {
 		let view = ResultView()
 		return view
 	}()
+    
+    // MARK: - Properties
+    
+    // MARK: - Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		addSubviews()
 		setupConstraints()
-	
     }
 }
+
+// MARK: - Private extension
 
 extension CorrectViewController {
 	private func addSubviews() {
 		view.addSubview(backgroundImage)
-		
 		view.addSubview(teamView)
 		view.addSubview(resultView)
 		view.addSubview(passButton)
-		
 	}
 	
 	private func setupConstraints() {
@@ -83,7 +88,7 @@ extension CorrectViewController {
 			resultView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
 			resultView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
 			resultView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-			resultView.heightAnchor.constraint(equalToConstant: 301),
+			resultView.heightAnchor.constraint(greaterThanOrEqualToConstant: 301),
 
 			passButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
 			passButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),

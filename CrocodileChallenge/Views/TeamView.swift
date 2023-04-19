@@ -8,18 +8,8 @@
 import UIKit
 
 class TeamView: UIView {
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setupView()
-		addSubviews()
-		setupConstraints()
-		
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    
+    // MARK: - Subviews
 		
 	private lazy var avatarImageView: UIImageView = {
 		let imageView = UIImageView()
@@ -80,35 +70,57 @@ class TeamView: UIView {
 		stackView.spacing = 0
 		return stackView
 	}()
-	
-	private func addSubviews() {
-		addSubview(stackView)
-		stackView.addArrangedSubview(teamStackView)
-		stackView.addArrangedSubview(pointsStackView)
-		teamStackView.addArrangedSubview(avatarImageView)
-		teamStackView.addArrangedSubview(teamNameLabel)
-		pointsStackView.addArrangedSubview(numberOfPointsLabel)
-		pointsStackView.addArrangedSubview(captionPointsLabel)
-	}
-	
-	private func setupConstraints() {
-		NSLayoutConstraint.activate([
-			stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-			stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15),
-			stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+    
+    // MARK: - Lifecycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        addSubviews()
+        setupConstraints()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
-			avatarImageView.heightAnchor.constraint(equalToConstant: 56),
-			avatarImageView.widthAnchor.constraint(equalToConstant: 56),
-		])
-	}
-	
-	private func setupView() {
-		translatesAutoresizingMaskIntoConstraints = false
-		backgroundColor = .white
-		layer.cornerRadius = 10
-	}
-	
-	func setTeamName(_ name: String) {
-		teamNameLabel.text = name
-	}
+// MARK: - Private Extension
+
+private extension TeamView {
+    func addSubviews() {
+        addSubview(stackView)
+        stackView.addArrangedSubview(teamStackView)
+        stackView.addArrangedSubview(pointsStackView)
+        teamStackView.addArrangedSubview(avatarImageView)
+        teamStackView.addArrangedSubview(teamNameLabel)
+        pointsStackView.addArrangedSubview(numberOfPointsLabel)
+        pointsStackView.addArrangedSubview(captionPointsLabel)
+    }
+    
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15),
+            stackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+
+            avatarImageView.heightAnchor.constraint(equalToConstant: 56),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 56),
+        ])
+    }
+    
+    func setupView() {
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .white
+        layer.cornerRadius = 10
+    }
+}
+
+// MARK: - Internal extension
+
+extension TeamView {
+    func setTeamName(_ name: String) {
+        teamNameLabel.text = name
+    }
 }

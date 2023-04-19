@@ -9,16 +9,7 @@ import UIKit
 
 class ResultView: UIView {
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setupView()
-		addSubviews()
-		setupConstraints()
-	}
-
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    // MARK: - Subviews
 	
 	private lazy var starImageView: UIImageView = {
 		let imageView = UIImageView()
@@ -57,7 +48,7 @@ class ResultView: UIView {
 		let stackView = UIStackView()
 		stackView.axis = .vertical
 		stackView.alignment = .center
-		stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
 		stackView.spacing = 10
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		return stackView
@@ -82,41 +73,60 @@ class ResultView: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
-	
-	private func setupConstraints() {
-		NSLayoutConstraint.activate([
-			resultStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28),
-			resultStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -28),
-			resultStackView.topAnchor.constraint(equalTo: topAnchor, constant: 43),
-			resultStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -46),
-			
-			captionLabel.bottomAnchor.constraint(equalTo: starImageView.topAnchor, constant: 10),
-			
-			captionPointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
-			captionPointLabel.bottomAnchor.constraint(equalTo: starImageView.bottomAnchor, constant: -5),
-			
-			pointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
-			pointLabel.centerYAnchor.constraint(equalTo: starImageView.centerYAnchor),
-		])
-	}
-	
-	private func addSubviews() {
-		addSubview(resultStackView)
-		resultStackView.addArrangedSubview(titleLabel)
-		resultStackView.addArrangedSubview(captionLabel)
-		resultStackView.addArrangedSubview(starImageView)
-		starImageView.addSubview(captionPointLabel)
-		starImageView.addSubview(pointLabel)
-		resultStackView.addArrangedSubview(nextTeamLabel)
-	}
-	
-	private func setupView() {
-		backgroundColor = UIColor(named: Resources.Colors.green)
-		layer.cornerRadius = 20
-		translatesAutoresizingMaskIntoConstraints = false
-	}
-	
-	func setupTeamName(_ name: String) {
-		nextTeamLabel.text = "Следующий ход - \"\(name)\""
-	}
+    
+    // MARK: - Lifecycle
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        addSubviews()
+        setupConstraints()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - Private Extension
+
+private extension ResultView {
+    func setupConstraints() {
+        NSLayoutConstraint.activate([
+            resultStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 28),
+            resultStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -28),
+            resultStackView.topAnchor.constraint(equalTo: topAnchor, constant: 43),
+            resultStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -46),
+            
+            captionPointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
+            captionPointLabel.bottomAnchor.constraint(equalTo: starImageView.bottomAnchor, constant: 5),
+            
+            pointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
+            pointLabel.centerYAnchor.constraint(equalTo: starImageView.centerYAnchor),
+        ])
+    }
+    
+    func addSubviews() {
+        addSubview(resultStackView)
+        resultStackView.addArrangedSubview(titleLabel)
+        resultStackView.addArrangedSubview(captionLabel)
+        resultStackView.addArrangedSubview(starImageView)
+        starImageView.addSubview(captionPointLabel)
+        starImageView.addSubview(pointLabel)
+        resultStackView.addArrangedSubview(nextTeamLabel)
+    }
+    
+    func setupView() {
+        backgroundColor = UIColor(named: Resources.Colors.green)
+        layer.cornerRadius = 20
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
+// MARK: - Internal Extension
+
+extension ResultView {
+    func setupTeamName(_ name: String) {
+        nextTeamLabel.text = "Следующий ход - \"\(name)\""
+    }
 }
