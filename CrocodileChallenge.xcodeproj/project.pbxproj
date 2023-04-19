@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F520FBA29EEB2EC0049A2D8 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FB929EEB2EC0049A2D8 /* TeamView.swift */; };
+		2F520FBC29EEC0AE0049A2D8 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FBB29EEC0AE0049A2D8 /* ResultView.swift */; };
 		7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F27BA29ED631100625ED0 /* TestModel.swift */; };
 		7A7F27BD29ED632000625ED0 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F27BC29ED632000625ED0 /* TestView.swift */; };
 		7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B845D29ED4D8000F87CF4 /* AppDelegate.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F520FB929EEB2EC0049A2D8 /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		2F520FBB29EEC0AE0049A2D8 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		7A7F27BA29ED631100625ED0 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		7A7F27BC29ED632000625ED0 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		7A9B845A29ED4D8000F87CF4 /* CrocodileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrocodileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				7A7F27BC29ED632000625ED0 /* TestView.swift */,
+				2F520FB929EEB2EC0049A2D8 /* TeamView.swift */,
+				2F520FBB29EEC0AE0049A2D8 /* ResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,8 +223,10 @@
 			files = (
 				8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */,
 				7A7F27BD29ED632000625ED0 /* TestView.swift in Sources */,
+				2F520FBA29EEB2EC0049A2D8 /* TeamView.swift in Sources */,
 				7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */,
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
+				2F520FBC29EEC0AE0049A2D8 /* ResultView.swift in Sources */,
 				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
