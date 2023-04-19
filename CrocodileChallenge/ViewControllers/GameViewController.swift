@@ -94,6 +94,8 @@ class GameViewController: UIViewController {
         addSubviews()
         setupConstraints()
         configureButtons()
+        
+        navigationController?.isNavigationBarHidden = true
     }
 }
 
@@ -155,7 +157,8 @@ extension GameViewController {
 
     @objc
     private func rightButtonAction() {
-        print("right")
+        let vc = CorrectViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc
@@ -169,8 +172,8 @@ extension GameViewController {
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { _ in
             print("отмена")
         }
-        let agreementAction = UIAlertAction(title: "Да", style: .destructive) { _ in
-            print("да")
+        let agreementAction = UIAlertAction(title: "Да", style: .destructive) { [weak self] _ in
+            self?.navigationController?.popToRootViewController(animated: true)
         }
         alert.addAction(cancelAction)
         alert.addAction(agreementAction)

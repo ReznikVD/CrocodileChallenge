@@ -31,14 +31,14 @@ class CategoryViewController: UIViewController {
     
     private lazy var startButton: CustomButton = {
         let button = CustomButton(title: "Начать игру", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         return button
     }()
     
     // MARK: - Properties
     
-    private var arrayOfImages = [Resources.Images.frog, Resources.Images.burger, Resources.Images.cowboy, Resources.Images.nails]
-    private var arrayOfColors = [Resources.Colors.purple, Resources.Colors.lightGreen, Resources.Colors.blue, Resources.Colors.red]
-    private var arrayOfCellLabelTexts = ["Животные", "Еда", "Личности", "Хобби"]
+    private var categories = Category.getCategories()
+    private lazy var currentCategory = categories[0]
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
@@ -58,8 +58,6 @@ class CategoryViewController: UIViewController {
 private extension CategoryViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Категории"
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
@@ -94,6 +92,11 @@ private extension CategoryViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
         ])
     }
+    
+    @objc func startButtonPressed(_ sender: UIButton) {
+        let vc = GameViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -101,22 +104,22 @@ private extension CategoryViewController {
 extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        cell.setupCell(image: UIImage(named: arrayOfImages[indexPath.row])!, color: UIColor(named: arrayOfColors[indexPath.row])!)
-        cell.cellLabel.text = arrayOfCellLabelTexts[indexPath.row]
-        if indexPath.row == 1 {
-            cell.setupCheckMarkImage()
-        }
+        cell.setupCell(categories[indexPath.row], check: currentCategory.title == categories[indexPath.row].title)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightOfCell + spacingBetweenCells
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: - change current category and reload table view
     }
 }
 

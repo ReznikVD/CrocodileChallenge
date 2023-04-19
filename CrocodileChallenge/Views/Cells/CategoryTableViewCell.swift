@@ -65,9 +65,12 @@ private extension CategoryTableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
         
+        checkMarkImage.isHidden = true
+        
         addSubview(containerView)
         containerView.addSubview(avatarIcon)
         containerView.addSubview(cellLabel)
+        containerView.addSubview(checkMarkImage)
         
         setupConstraints()
     }
@@ -87,6 +90,11 @@ private extension CategoryTableViewCell {
             cellLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 37),
             cellLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -37),
             cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            
+            checkMarkImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            checkMarkImage.heightAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.widthAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
         ])
     }
 }
@@ -94,21 +102,10 @@ private extension CategoryTableViewCell {
 // MARK: - Internal Extension
 
 extension CategoryTableViewCell {
-    func setupCell(image: UIImage, color: UIColor) {
-        avatarIcon.image = image
-        containerView.backgroundColor = color
-    }
-}
-
-extension CategoryTableViewCell {
-    func setupCheckMarkImage() {
-        containerView.addSubview(checkMarkImage)
-        
-        NSLayoutConstraint.activate([
-            checkMarkImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            checkMarkImage.heightAnchor.constraint(equalToConstant: 30),
-            checkMarkImage.widthAnchor.constraint(equalToConstant: 30),
-            checkMarkImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
-        ])
+    func setupCell(_ category: Category, check: Bool) {
+        avatarIcon.image = UIImage(named: category.avatar)!
+        containerView.backgroundColor = UIColor(named: category.color)!
+        cellLabel.text = category.title
+        checkMarkImage.isHidden = !check
     }
 }

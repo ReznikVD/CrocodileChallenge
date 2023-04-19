@@ -41,8 +41,7 @@ class TeamViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var arrayOfImages = [Resources.Images.cowboy, Resources.Images.burger]
-    private var arrayOfCellLabelTexts = ["Ковбои", "Стройняшки"]
+    private var teams = Team.getTeam()
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
@@ -61,8 +60,7 @@ class TeamViewController: UIViewController {
 private extension TeamViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.isNavigationBarHidden = false
         navigationItem.title = "Кто играет?"
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
@@ -104,13 +102,12 @@ private extension TeamViewController {
 extension TeamViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.identifier, for: indexPath) as! TeamTableViewCell
-        cell.setupCell(with: UIImage(named: arrayOfImages[indexPath.row])!)
-        cell.cellLabel.text = arrayOfCellLabelTexts[indexPath.row]
+        cell.setupCell(team: teams[indexPath.row])
         return cell
     }
     
