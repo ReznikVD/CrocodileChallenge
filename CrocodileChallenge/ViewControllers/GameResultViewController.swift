@@ -14,7 +14,7 @@ class GameResultViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.delegate = self
+      //  tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.identifier)
         tableView.backgroundColor = .clear
@@ -119,17 +119,7 @@ extension GameResultViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
 
-extension GameResultViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return indexPath.section == 1
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    }
-}
 
 extension UIViewController{
     func centerTitle(){
