@@ -39,6 +39,7 @@ class CorrectViewController: UIViewController {
 
 	private lazy var passButton: CustomButton = {
 		let button = CustomButton(title: "Передать ход", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(passButtonPressed), for: .touchUpInside)
 		return button
 	}()
 	
@@ -96,4 +97,8 @@ extension CorrectViewController {
 			passButton.heightAnchor.constraint(equalToConstant: 60),
 		])
 	}
+    
+    @objc private func passButtonPressed(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

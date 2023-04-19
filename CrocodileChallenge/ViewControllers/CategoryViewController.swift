@@ -31,6 +31,7 @@ class CategoryViewController: UIViewController {
     
     private lazy var startButton: CustomButton = {
         let button = CustomButton(title: "Начать игру", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -57,8 +58,6 @@ class CategoryViewController: UIViewController {
 private extension CategoryViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Категории"
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
@@ -92,6 +91,11 @@ private extension CategoryViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
         ])
+    }
+    
+    @objc func startButtonPressed(_ sender: UIButton) {
+        let vc = GameViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

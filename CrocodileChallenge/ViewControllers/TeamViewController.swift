@@ -60,8 +60,7 @@ class TeamViewController: UIViewController {
 private extension TeamViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.isNavigationBarHidden = false
         navigationItem.title = "Кто играет?"
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
