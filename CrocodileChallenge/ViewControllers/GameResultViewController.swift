@@ -16,7 +16,7 @@ class GameResultViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.identifier)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         return tableView
@@ -36,8 +36,7 @@ class GameResultViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var arrayOfImages = [Resources.Images.frog, Resources.Images.burger, Resources.Images.cowboy]
-    private var arrayOfCellLabelTexts = ["Животные", "Еда", "Личности", "Хобби"]
+    private var teams = Team.getTeam()
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     private var titleText = "Результаты"
@@ -105,14 +104,12 @@ private extension GameResultViewController {
 extension GameResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        cell.setupCell(image: UIImage(named: arrayOfImages[indexPath.row])!, color: .white)
-        cell.cellLabel.text = arrayOfCellLabelTexts[indexPath.row]
-        cell.cellLabel.textColor = .black
+        let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.identifier, for: indexPath) as! TeamTableViewCell
+        cell.setupCell(team: teams[indexPath.row])
         return cell
     }
     
