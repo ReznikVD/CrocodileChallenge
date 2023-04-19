@@ -37,7 +37,7 @@ class CategoryViewController: UIViewController {
     // MARK: - Properties
     
     private var arrayOfImages = [Resources.Images.frog, Resources.Images.burger, Resources.Images.cowboy, Resources.Images.nails]
-    private var arrayOfColors = [Resources.Colors.green, Resources.Colors.lightGreen, Resources.Colors.blue, Resources.Colors.red]
+    private var arrayOfColors = [Resources.Colors.purple, Resources.Colors.lightGreen, Resources.Colors.blue, Resources.Colors.red]
     private var arrayOfCellLabelTexts = ["Животные", "Еда", "Личности", "Хобби"]
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
