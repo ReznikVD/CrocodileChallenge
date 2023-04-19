@@ -21,6 +21,7 @@
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
 		7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */; };
 		7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */; };
+		8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */; };
 		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
 		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
 		7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = CrocodileChallenge/Views/Cells/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */,
+				8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */,
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
 				7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */,
+				8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */,
 				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
