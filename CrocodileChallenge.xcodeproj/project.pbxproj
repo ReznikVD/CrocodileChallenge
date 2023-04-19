@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F520FBA29EEB2EC0049A2D8 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FB929EEB2EC0049A2D8 /* TeamView.swift */; };
+		2F520FBC29EEC0AE0049A2D8 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FBB29EEC0AE0049A2D8 /* ResultView.swift */; };
 		7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F27BA29ED631100625ED0 /* TestModel.swift */; };
 		7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B845D29ED4D8000F87CF4 /* AppDelegate.swift */; };
 		7A9B846029ED4D8000F87CF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B845F29ED4D8000F87CF4 /* SceneDelegate.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F520FB929EEB2EC0049A2D8 /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		2F520FBB29EEC0AE0049A2D8 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		7A7F27BA29ED631100625ED0 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		7A9B845A29ED4D8000F87CF4 /* CrocodileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrocodileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9B845D29ED4D8000F87CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
