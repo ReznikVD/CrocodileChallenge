@@ -36,9 +36,8 @@ class CategoryViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var arrayOfImages = [Resources.Images.frog, Resources.Images.burger, Resources.Images.cowboy, Resources.Images.nails]
-    private var arrayOfColors = [Resources.Colors.purple, Resources.Colors.lightGreen, Resources.Colors.blue, Resources.Colors.red]
-    private var arrayOfCellLabelTexts = ["Животные", "Еда", "Личности", "Хобби"]
+    private var categories = Category.getCategories()
+    private lazy var currentCategory = categories[0]
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
@@ -101,22 +100,22 @@ private extension CategoryViewController {
 extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return categories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier, for: indexPath) as! CategoryTableViewCell
-        cell.setupCell(image: UIImage(named: arrayOfImages[indexPath.row])!, color: UIColor(named: arrayOfColors[indexPath.row])!)
-        cell.cellLabel.text = arrayOfCellLabelTexts[indexPath.row]
-        if indexPath.row == 1 {
-            cell.setupCheckMarkImage()
-        }
+        cell.setupCell(categories[indexPath.row], check: currentCategory.title == categories[indexPath.row].title)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightOfCell + spacingBetweenCells
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: - change current category and reload table view
     }
 }
 

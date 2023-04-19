@@ -86,7 +86,8 @@ private extension TeamTableViewCell {
 // MARK: - Internal Extension
 
 extension TeamTableViewCell {
-    func setupCell(with image: UIImage) {
-        avatarIcon.image = image
+    func setupCell(team: Team) {
+        avatarIcon.image = UIImage(named: team.avatar)!
+        cellLabel.text = team.name
     }
 }
