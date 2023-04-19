@@ -8,6 +8,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    // MARK: - Subviews
+    
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,6 +86,8 @@ class GameViewController: UIViewController {
         let button = CustomButton(title: "Сбросить", color: UIColor(named: Resources.Colors.gray)!)
         return button
     }()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +96,8 @@ class GameViewController: UIViewController {
         configureButtons()
     }
 }
+
+// MARK: - Private Extension
 
 extension GameViewController {
     private func addSubviews() {
@@ -102,7 +109,7 @@ extension GameViewController {
         buttonsStackView.addArrangedSubview(rightButton)
         buttonsStackView.addArrangedSubview(brokeRulesButton)
         buttonsStackView.addArrangedSubview(cancelButton)
-        backgroundImageView.addSubview(buttonsStackView)
+        view.addSubview(buttonsStackView)
     }
 
     private func setupConstraints() {
@@ -159,9 +166,14 @@ extension GameViewController {
     @objc
     private func cancelButtonAction() {
         let alert = UIAlertController(title: "Сбросить игру?", message: "Вы хотите сбросить вашу игру и вернуться в главное меню?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel)
-        let agreementAction = UIAlertAction(title: "Да", style: .default)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { _ in
+            print("отмена")
+        }
+        let agreementAction = UIAlertAction(title: "Да", style: .destructive) { _ in
+            print("да")
+        }
         alert.addAction(cancelAction)
         alert.addAction(agreementAction)
+        present(alert, animated: true)
     }
 }
