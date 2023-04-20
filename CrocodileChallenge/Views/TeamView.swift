@@ -13,14 +13,12 @@ class TeamView: UIView {
 		
 	private lazy var avatarImageView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.image = UIImage(named: Resources.Images.cowboy)
 		return imageView
 	}()
 	
 	private lazy var teamNameLabel: UILabel = {
 		let label = UILabel()
 		label.font = UIFont.systemFont(ofSize: 20)
-		label.text = "Ковбои"
 		label.numberOfLines = 0
 		return label
 	}()

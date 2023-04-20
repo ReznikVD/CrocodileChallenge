@@ -52,6 +52,12 @@ class CorrectViewController: UIViewController {
         super.viewDidLoad()
 		addSubviews()
 		setupConstraints()
+        
+        let currentTeam = manager.getCurrentTeam()
+        teamView.setTeamName(currentTeam.name)
+        teamView.setAvatar(currentTeam.avatar)
+        teamView.setNumberOfPoints("\(currentTeam.score)")
+        resultView.nextTeamName(manager.getNextTeam().name)
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +106,7 @@ extension CorrectViewController {
 	
 	@objc
 	private func pass(_ sender: UIButton) {
-		print("Pass the movie")
+        manager.nextMove()
+        navigationController?.popViewController(animated: true)
 	}
 }

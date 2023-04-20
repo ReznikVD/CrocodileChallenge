@@ -173,6 +173,7 @@ extension GameViewController {
     @objc
     private func rightButtonAction() {
         timer.invalidate()
+        manager.addScore()
         let vc = CorrectViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -191,6 +192,7 @@ extension GameViewController {
             print("отмена")
         }
         let agreementAction = UIAlertAction(title: "Да", style: .destructive) { [weak self] _ in
+            self?.manager.reset()
             self?.navigationController?.popToRootViewController(animated: true)
         }
         alert.addAction(cancelAction)

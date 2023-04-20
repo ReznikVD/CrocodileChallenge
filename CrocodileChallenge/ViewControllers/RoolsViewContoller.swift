@@ -44,6 +44,7 @@ class RoolsViewContoller: UIViewController {
         super.viewDidLoad()
         addSubviews()
         rulesLabel.text = Rules.getRules()
+        navigationController?.isNavigationBarHidden = false
     }
 }
     // MARK: - Private Extension

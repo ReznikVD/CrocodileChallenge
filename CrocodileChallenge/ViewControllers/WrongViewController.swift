@@ -21,6 +21,7 @@ class WrongViewController: UIViewController {
 	
 	private lazy var passButton: CustomButton = {
 		let button = CustomButton(title: "Передать ход", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(pass), for: .touchUpInside)
 		return button
 	}()
 	
@@ -53,10 +54,11 @@ class WrongViewController: UIViewController {
 		addSubviews()
 		setupConstraints()
 		
-		teamView.setNumberOfPoints("2")
-		teamView.setTeamName("Стройняшки")
-		teamView.setAvatar(Resources.Images.burger)
-		resultView.nextTeamName("Ковбои")
+        let currentTeam = manager.getCurrentTeam()
+        teamView.setTeamName(currentTeam.name)
+        teamView.setAvatar(currentTeam.avatar)
+        teamView.setNumberOfPoints("\(currentTeam.score)")
+        resultView.nextTeamName(manager.getNextTeam().name)
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +107,7 @@ extension WrongViewController {
 	
 	@objc
 	private func pass(_ sender: UIButton) {
-		print("Pass the movie")
+        manager.nextMove()
+        navigationController?.popViewController(animated: true)
 	}
 }
