@@ -181,8 +181,8 @@ extension GameViewController {
     @objc
     private func brokeRulesButtonAction() {
         timer.invalidate()
-        let wrongVC = WrongViewController()
-        show(wrongVC, sender: self)
+        let vc = WrongViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc
@@ -193,6 +193,7 @@ extension GameViewController {
         }
         let agreementAction = UIAlertAction(title: "Да", style: .destructive) { [weak self] _ in
             self?.manager.reset()
+            self?.timer.invalidate()
             self?.navigationController?.popToRootViewController(animated: true)
         }
         alert.addAction(cancelAction)
