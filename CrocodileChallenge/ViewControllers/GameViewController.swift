@@ -98,8 +98,16 @@ class GameViewController: UIViewController {
         configureButtons()
         
         navigationController?.isNavigationBarHidden = true
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         createTimer()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer.invalidate()
     }
 }
 
@@ -167,7 +175,8 @@ extension GameViewController {
 
     @objc
     private func brokeRulesButtonAction() {
-        print("broke")
+        let wrongVC = WrongViewController()
+        show(wrongVC, sender: self)
     }
 
     @objc
@@ -185,6 +194,8 @@ extension GameViewController {
     }
 
     private func createTimer() {
+        timerLabel.text = "01:00"
+        timeForGame = 5
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
@@ -196,8 +207,8 @@ extension GameViewController {
         timerLabel.text = "\(totalTimeforGame)"
         if timeForGame == 0 {
             timer.invalidate()
-            let vc = WrongViewController()
-            show(vc, sender: self)
+            let wrongVC = WrongViewController()
+            show(wrongVC, sender: self)
         }
     }
 
