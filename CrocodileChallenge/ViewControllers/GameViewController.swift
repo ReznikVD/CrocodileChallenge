@@ -8,7 +8,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+    var timer = Timer()
+    var timeForGame = 60
+
     // MARK: - Subviews
     
     private lazy var backgroundImageView: UIImageView = {
@@ -32,7 +34,7 @@ class GameViewController: UIViewController {
     private lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "00:00"
+        label.text = "01:00"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = .black
@@ -96,6 +98,8 @@ class GameViewController: UIViewController {
         configureButtons()
         
         navigationController?.isNavigationBarHidden = true
+
+        createTimer()
     }
 }
 
@@ -178,5 +182,30 @@ extension GameViewController {
         alert.addAction(cancelAction)
         alert.addAction(agreementAction)
         present(alert, animated: true)
+    }
+
+    private func createTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+
+    @objc
+    private func timerAction() {
+        timeForGame -= 1
+        let totalTimeforGame = timeStringFor(seconds: timeForGame)
+        timerLabel.text = "\(totalTimeforGame)"
+        if timeForGame == 0 {
+            timer.invalidate()
+            let vc = WrongViewController()
+            show(vc, sender: self)
+        }
+    }
+
+    func timeStringFor(seconds : Int) -> String {
+      let formatter = DateComponentsFormatter()
+      formatter.allowedUnits = [.second, .minute, .hour]
+      formatter.zeroFormattingBehavior = .pad
+      let output = formatter.string(from: TimeInterval(seconds))!
+      return seconds < 3600 ? output.substring(from: output.range(of: ":")!.upperBound) : output
     }
 }
