@@ -31,6 +31,8 @@ class TeamView: UIView {
 		let label = UILabel()
 		label.text = "1"
 		label.font = UIFont(name: "Arial Rounded MT Bold", size: 55)
+		label.minimumScaleFactor = 0.5
+		label.adjustsFontSizeToFitWidth = true
 		label.textAlignment = .center
 		return label
 	}()
@@ -56,7 +58,7 @@ class TeamView: UIView {
 		let stackView = UIStackView()
 		stackView.axis = .horizontal
 		stackView.alignment = .fill
-		stackView.distribution = .fillProportionally
+		stackView.distribution = .equalSpacing
 		stackView.spacing = 5
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		return stackView
@@ -107,12 +109,15 @@ private extension TeamView {
 
             avatarImageView.heightAnchor.constraint(equalToConstant: 56),
             avatarImageView.widthAnchor.constraint(equalToConstant: 56),
+			
+			teamNameLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 200)
         ])
     }
     
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
+		clipsToBounds = true
         layer.cornerRadius = 10
     }
 }
@@ -123,4 +128,12 @@ extension TeamView {
     func setTeamName(_ name: String) {
         teamNameLabel.text = name
     }
+	
+	func setNumberOfPoints(_ point: String) {
+		numberOfPointsLabel.text = point
+	}
+	
+	func setAvatar(_ avatar: String) {
+		avatarImageView.image = UIImage(named: avatar)
+	}
 }

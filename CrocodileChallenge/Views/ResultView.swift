@@ -11,7 +11,7 @@ class ResultView: UIView {
 	
     // MARK: - Subviews
 	
-	private lazy var starImageView: UIImageView = {
+	private lazy var pointImageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: Resources.Images.star)
 		imageView.tintColor = UIColor(named: Resources.Colors.yellow)
@@ -28,7 +28,7 @@ class ResultView: UIView {
 	
 	private lazy var captionLabel: UILabel = {
 		let label = UILabel()
-		label.text = "Вы получаете овраорваовр олра лора лоыаролраыло рола ры"
+		label.text = "Вы получаете"
 		label.numberOfLines = 0
 		label.font = UIFont.systemFont(ofSize: 16)
 		label.textAlignment = .center
@@ -48,7 +48,7 @@ class ResultView: UIView {
 		let stackView = UIStackView()
 		stackView.axis = .vertical
 		stackView.alignment = .center
-        stackView.distribution = .fill
+        stackView.distribution = .equalSpacing
 		stackView.spacing = 10
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		return stackView
@@ -82,6 +82,19 @@ class ResultView: UIView {
         addSubviews()
         setupConstraints()
     }
+	
+	init(title: String, caption: String, pointImage: UIImage, pointCaption: Bool, numberOfPoints: String, color: UIColor) {
+		super.init(frame: .zero)
+		titleLabel.text = title
+		captionLabel.text = caption
+		pointImageView.image = pointImage
+		captionPointLabel.isHidden = !pointCaption
+		pointLabel.text = numberOfPoints
+		self.backgroundColor = color
+		setupView()
+		addSubviews()
+		setupConstraints()
+	}
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -98,11 +111,11 @@ private extension ResultView {
             resultStackView.topAnchor.constraint(equalTo: topAnchor, constant: 43),
             resultStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -46),
             
-            captionPointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
-            captionPointLabel.bottomAnchor.constraint(equalTo: starImageView.bottomAnchor, constant: 5),
+            captionPointLabel.centerXAnchor.constraint(equalTo: pointImageView.centerXAnchor),
+            captionPointLabel.bottomAnchor.constraint(equalTo: pointImageView.bottomAnchor, constant: 5),
             
-            pointLabel.centerXAnchor.constraint(equalTo: starImageView.centerXAnchor),
-            pointLabel.centerYAnchor.constraint(equalTo: starImageView.centerYAnchor),
+            pointLabel.centerXAnchor.constraint(equalTo: pointImageView.centerXAnchor),
+            pointLabel.centerYAnchor.constraint(equalTo: pointImageView.centerYAnchor),
         ])
     }
     
@@ -110,14 +123,14 @@ private extension ResultView {
         addSubview(resultStackView)
         resultStackView.addArrangedSubview(titleLabel)
         resultStackView.addArrangedSubview(captionLabel)
-        resultStackView.addArrangedSubview(starImageView)
-        starImageView.addSubview(captionPointLabel)
-        starImageView.addSubview(pointLabel)
+        resultStackView.addArrangedSubview(pointImageView)
+        pointImageView.addSubview(captionPointLabel)
+        pointImageView.addSubview(pointLabel)
         resultStackView.addArrangedSubview(nextTeamLabel)
     }
     
     func setupView() {
-        backgroundColor = UIColor(named: Resources.Colors.green)
+        //backgroundColor = UIColor(named: Resources.Colors.green)
         layer.cornerRadius = 20
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -126,7 +139,7 @@ private extension ResultView {
 // MARK: - Internal Extension
 
 extension ResultView {
-    func setupTeamName(_ name: String) {
+    func nextTeamName(_ name: String) {
         nextTeamLabel.text = "Следующий ход - \"\(name)\""
     }
 }

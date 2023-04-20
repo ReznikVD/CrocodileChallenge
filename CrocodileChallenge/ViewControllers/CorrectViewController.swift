@@ -19,24 +19,6 @@ class CorrectViewController: UIViewController {
 		return imageView
 	}()
 
-	private lazy var starStackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .vertical
-		stackView.alignment = .center
-		stackView.distribution = .fillProportionally
-		stackView.spacing = 0
-		return stackView
-	}()
-
-	private lazy var pointsStackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .vertical
-		stackView.alignment = .fill
-		stackView.distribution = .fill
-		stackView.spacing = 0
-		return stackView
-	}()
-
 	private lazy var passButton: CustomButton = {
 		let button = CustomButton(title: "Передать ход", color: UIColor(named: Resources.Colors.green)!)
         button.addTarget(self, action: #selector(passButtonPressed), for: .touchUpInside)
@@ -49,7 +31,14 @@ class CorrectViewController: UIViewController {
 	}()
 	
 	private lazy var resultView: ResultView = {
-		let view = ResultView()
+		let view = ResultView(
+			title: "Поздравляем",
+			caption: "Вы получаете",
+			pointImage: UIImage(named: Resources.Images.star)!,
+			pointCaption: true,
+			numberOfPoints: "1",
+			color: UIColor(named: Resources.Colors.green)!
+		)
 		return view
 	}()
     
@@ -62,6 +51,11 @@ class CorrectViewController: UIViewController {
 		addSubviews()
 		setupConstraints()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(true, animated: false)
+	}
 }
 
 // MARK: - Private extension
@@ -97,8 +91,13 @@ extension CorrectViewController {
 			passButton.heightAnchor.constraint(equalToConstant: 60),
 		])
 	}
-    
-    @objc private func passButtonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
+	
+	private func configureButton() {
+		passButton.addTarget(self, action: #selector(pass), for: .touchUpInside)
+	}
+	
+	@objc
+	private func pass(_ sender: UIButton) {
+		print("Pass the movie")
+	}
 }
