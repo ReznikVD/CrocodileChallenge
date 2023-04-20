@@ -55,6 +55,16 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    // MARK: - Hide Back text
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Скрываем текст "Back"
+        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+    }
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
