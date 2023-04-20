@@ -107,6 +107,11 @@ extension CorrectViewController {
 	@objc
 	private func pass(_ sender: UIButton) {
         manager.nextMove()
-        navigationController?.popViewController(animated: true)
+        if manager.getRound() == 0 {
+            let vc = GameResultViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
 	}
 }

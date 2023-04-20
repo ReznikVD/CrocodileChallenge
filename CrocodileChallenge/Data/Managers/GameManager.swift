@@ -16,6 +16,7 @@ class GameManager {
     private var currentTeam = Team.getTeam()[0]
     private var nextTeam = Team.getTeam()[1]
     private var currentCategory = Category.getCategories()[0]
+    private var numberOfRounds = 5
     
     func getCurrentTeam() -> Team {
         return currentTeam
@@ -29,11 +30,16 @@ class GameManager {
         return currentCategory
     }
     
+    func getRound() -> Int {
+        return numberOfRounds
+    }
+    
     func setCategory(_ category: Category) {
         currentCategory = category
     }
     
     func nextMove() {
+        numberOfRounds -= 1
         let temp = currentTeam
         currentTeam = nextTeam
         nextTeam = temp
@@ -52,6 +58,7 @@ class GameManager {
     }
     
     func reset() {
+        numberOfRounds = 5
         currentTeam = Team.getTeam()[0]
         nextTeam = Team.getTeam()[1]
         currentCategory = Category.getCategories()[0]
