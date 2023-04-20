@@ -62,8 +62,6 @@ class MainViewController: UIViewController {
         
         addViews()
         configureButtons()
-        
-       
     }
 }
     // MARK: - Private Extension
@@ -119,6 +117,7 @@ class MainViewController: UIViewController {
             startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
             rulesButton.addTarget(self, action: #selector(startRulesAction), for: .touchUpInside)
         }
+        
         @objc
         private func startButtonAction(){
             let vc = TeamViewController() 

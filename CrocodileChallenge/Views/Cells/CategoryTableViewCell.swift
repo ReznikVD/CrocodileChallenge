@@ -1,19 +1,19 @@
 //
-//  TeamCollectionViewCell.swift
+//  CategoryTableViewCell.swift
 //  CrocodileChallenge
 //
-//  Created by Marat Guseynov on 18.04.2023.
+//  Created by Marat Guseynov on 19.04.2023.
 //
 
 import UIKit
 
-class TeamTableViewCell: UITableViewCell {
+class CategoryTableViewCell: UITableViewCell {
     
-    static let identifier = "TeamTableViewCell"
+    static let identifier = "CategoryTableViewCell"
     
     // MARK: - Subviews
     
-    private lazy var containerView: UIView = {
+    lazy var containerView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 10
         view.backgroundColor = .white
@@ -31,8 +31,15 @@ class TeamTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20)
-        label.textColor = .black
+        label.textColor = .white
         return label
+    }()
+    
+    lazy var checkMarkImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "check")
+        return image
     }()
     
     // MARK: - Properties
@@ -51,15 +58,19 @@ class TeamTableViewCell: UITableViewCell {
 
 // MARK: - Private Extension
 
-private extension TeamTableViewCell {
+private extension CategoryTableViewCell {
+    
     func setupCell() {
         
         backgroundColor = .clear
         selectionStyle = .none
         
+        checkMarkImage.isHidden = true
+        
         addSubview(containerView)
         containerView.addSubview(avatarIcon)
         containerView.addSubview(cellLabel)
+        containerView.addSubview(checkMarkImage)
         
         setupConstraints()
     }
@@ -78,16 +89,23 @@ private extension TeamTableViewCell {
             
             cellLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 37),
             cellLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -37),
-            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            
+            checkMarkImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            checkMarkImage.heightAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.widthAnchor.constraint(equalToConstant: 30),
+            checkMarkImage.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20)
         ])
     }
 }
 
 // MARK: - Internal Extension
 
-extension TeamTableViewCell {
-    func setupCell(team: Team) {
-        avatarIcon.image = UIImage(named: team.avatar)!
-        cellLabel.text = team.name
+extension CategoryTableViewCell {
+    func setupCell(_ category: Category, check: Bool) {
+        avatarIcon.image = UIImage(named: category.avatar)!
+        containerView.backgroundColor = UIColor(named: category.color)!
+        cellLabel.text = category.title
+        checkMarkImage.isHidden = !check
     }
 }

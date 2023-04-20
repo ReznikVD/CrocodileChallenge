@@ -12,7 +12,7 @@ enum Resources {
         static let blue = "blue"
         static let gray = "gray"
         static let green = "green"
-        static let lightGreen = "lightGreen"
+        static let lightGreen = "lightgreen"
         static let orange = "orange"
         static let purple = "purple"
         static let red = "red"
