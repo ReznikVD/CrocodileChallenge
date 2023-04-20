@@ -61,6 +61,11 @@ class CorrectViewController: UIViewController {
 		addSubviews()
 		setupConstraints()
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(true, animated: false)
+	}
 }
 
 // MARK: - Private extension
@@ -95,5 +100,14 @@ extension CorrectViewController {
 			passButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
 			passButton.heightAnchor.constraint(equalToConstant: 60),
 		])
+	}
+	
+	private func configureButton() {
+		passButton.addTarget(self, action: #selector(pass), for: .touchUpInside)
+	}
+	
+	@objc
+	private func pass(_ sender: UIButton) {
+		print("Pass the movie")
 	}
 }

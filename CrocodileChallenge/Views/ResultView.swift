@@ -28,7 +28,7 @@ class ResultView: UIView {
 	
 	private lazy var captionLabel: UILabel = {
 		let label = UILabel()
-		label.text = "Вы получаете овраорваовр олра лора лоыаролраыло рола ры"
+		label.text = "Вы получаете"
 		label.numberOfLines = 0
 		label.font = UIFont.systemFont(ofSize: 16)
 		label.textAlignment = .center
