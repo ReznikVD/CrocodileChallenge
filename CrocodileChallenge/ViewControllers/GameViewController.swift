@@ -169,12 +169,14 @@ extension GameViewController {
 
     @objc
     private func rightButtonAction() {
+        timer.invalidate()
         let vc = CorrectViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc
     private func brokeRulesButtonAction() {
+        timer.invalidate()
         let wrongVC = WrongViewController()
         show(wrongVC, sender: self)
     }

@@ -25,6 +25,7 @@
 		7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */; };
 		7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */; };
 		7AFEF7E229F146250046846D /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFEF7E129F146250046846D /* Rules.swift */; };
+		7AFEF7E529F148610046846D /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFEF7E429F148610046846D /* GameManager.swift */; };
 		8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */; };
 		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
 		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
@@ -51,6 +52,7 @@
 		7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = CrocodileChallenge/Views/Cells/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7AFEF7E129F146250046846D /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		7AFEF7E429F148610046846D /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		7A9B847429ED4E4000F87CF4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7AFEF7E329F1484C0046846D /* Managers */,
 				8E91DB4D29EDC4680087DB00 /* Components */,
 				8E91DB4829ED95120087DB00 /* SupportingFiles */,
 				7A9B847129ED4DF500F87CF4 /* Model */,
@@ -150,6 +153,14 @@
 				8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7AFEF7E329F1484C0046846D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7AFEF7E429F148610046846D /* GameManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		8E91DB4829ED95120087DB00 /* SupportingFiles */ = {
@@ -247,6 +258,7 @@
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
 				7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */,
 				8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */,
+				7AFEF7E529F148610046846D /* GameManager.swift in Sources */,
 				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
