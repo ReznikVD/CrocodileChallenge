@@ -117,6 +117,7 @@ private extension TeamView {
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
+		clipsToBounds = true
         layer.cornerRadius = 10
     }
 }
@@ -127,4 +128,12 @@ extension TeamView {
     func setTeamName(_ name: String) {
         teamNameLabel.text = name
     }
+	
+	func setNumberOfPoints(_ point: String) {
+		numberOfPointsLabel.text = point
+	}
+	
+	func setAvatar(_ avatar: String) {
+		avatarImageView.image = UIImage(named: avatar)
+	}
 }

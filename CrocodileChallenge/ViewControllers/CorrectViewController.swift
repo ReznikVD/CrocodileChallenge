@@ -19,24 +19,6 @@ class CorrectViewController: UIViewController {
 		return imageView
 	}()
 
-	private lazy var starStackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .vertical
-		stackView.alignment = .center
-		stackView.distribution = .fillProportionally
-		stackView.spacing = 0
-		return stackView
-	}()
-
-	private lazy var pointsStackView: UIStackView = {
-		let stackView = UIStackView()
-		stackView.axis = .vertical
-		stackView.alignment = .fill
-		stackView.distribution = .fill
-		stackView.spacing = 0
-		return stackView
-	}()
-
 	private lazy var passButton: CustomButton = {
 		let button = CustomButton(title: "Передать ход", color: UIColor(named: Resources.Colors.green)!)
 		return button
@@ -48,7 +30,14 @@ class CorrectViewController: UIViewController {
 	}()
 	
 	private lazy var resultView: ResultView = {
-		let view = ResultView()
+		let view = ResultView(
+			title: "Поздравляем",
+			caption: "Вы получаете",
+			pointImage: UIImage(named: Resources.Images.star)!,
+			pointCaption: true,
+			numberOfPoints: "1",
+			color: UIColor(named: Resources.Colors.green)!
+		)
 		return view
 	}()
     
