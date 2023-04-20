@@ -21,6 +21,7 @@ class CorrectViewController: UIViewController {
 
 	private lazy var passButton: CustomButton = {
 		let button = CustomButton(title: "Передать ход", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(passButtonPressed), for: .touchUpInside)
 		return button
 	}()
 	

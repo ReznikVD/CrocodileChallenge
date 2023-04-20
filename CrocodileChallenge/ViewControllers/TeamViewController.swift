@@ -21,7 +21,7 @@ class TeamViewController: UIViewController {
         tableView.separatorStyle = .none
         return tableView
     }()
-  
+    
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: Resources.Images.background))
         image.contentMode = .scaleAspectFill
@@ -31,12 +31,17 @@ class TeamViewController: UIViewController {
     
     private lazy var startButton: CustomButton = {
         let button = CustomButton(title: "Игроки готовы", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
         return button
     }()
     
+    @objc private func startButtonPressed() {
+        navigationController?.pushViewController(CategoryViewController(), animated: true)
+    }
+    
     // MARK: - Properties
     
-    private var arrayOfImages = [Resources.Images.cowboy, Resources.Images.burger]
+    private var teams = Team.getTeam()
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
@@ -55,13 +60,12 @@ class TeamViewController: UIViewController {
 private extension TeamViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.isNavigationBarHidden = false
         navigationItem.title = "Кто играет?"
         navigationController?.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
             NSAttributedString.Key.foregroundColor: UIColor.black
-            ]
+        ]
     }
     
     func addViews() {
@@ -98,12 +102,12 @@ private extension TeamViewController {
 extension TeamViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfImages.count
+        return teams.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.identifier, for: indexPath) as! TeamTableViewCell
-        cell.setupCell(with: UIImage(named: arrayOfImages[indexPath.row])!)
+        cell.setupCell(team: teams[indexPath.row])
         return cell
     }
     

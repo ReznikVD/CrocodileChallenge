@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		7A0D881629EFE86A007513C0 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0D881529EFE86A007513C0 /* ResultView.swift */; };
 		7A0D881829EFE871007513C0 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0D881729EFE871007513C0 /* TeamView.swift */; };
-		7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7F27BA29ED631100625ED0 /* TestModel.swift */; };
+		7A0D881A29F0437D007513C0 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0D881929F0437D007513C0 /* Team.swift */; };
+		7A0D881C29F04388007513C0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0D881B29F04388007513C0 /* Category.swift */; };
 		7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B845D29ED4D8000F87CF4 /* AppDelegate.swift */; };
 		7A9B846029ED4D8000F87CF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B845F29ED4D8000F87CF4 /* SceneDelegate.swift */; };
 		7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B846129ED4D8000F87CF4 /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
 		7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */; };
 		7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */; };
+		8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */; };
 		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
 		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
@@ -30,7 +32,8 @@
 /* Begin PBXFileReference section */
 		7A0D881529EFE86A007513C0 /* ResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		7A0D881729EFE871007513C0 /* TeamView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
-		7A7F27BA29ED631100625ED0 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		7A0D881929F0437D007513C0 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		7A0D881B29F04388007513C0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		7A9B845A29ED4D8000F87CF4 /* CrocodileChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrocodileChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9B845D29ED4D8000F87CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A9B845F29ED4D8000F87CF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
 		7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = CrocodileChallenge/Views/Cells/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +99,8 @@
 		7A9B847129ED4DF500F87CF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A7F27BA29ED631100625ED0 /* TestModel.swift */,
+				7A0D881929F0437D007513C0 /* Team.swift */,
+				7A0D881B29F04388007513C0 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */,
+				8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -229,15 +235,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0D881A29F0437D007513C0 /* Team.swift in Sources */,
 				8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */,
 				7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */,
 				7A0D881629EFE86A007513C0 /* ResultView.swift in Sources */,
 				7A9B848029ED504900F87CF4 /* WrongViewController.swift in Sources */,
+				7A0D881C29F04388007513C0 /* Category.swift in Sources */,
 				7A9B847E29ED503D00F87CF4 /* CorrectViewController.swift in Sources */,
 				7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */,
+				8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */,
 				8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */,
 				7A9B847A29ED500200F87CF4 /* CategoryViewController.swift in Sources */,
-				7A7F27BB29ED631100625ED0 /* TestModel.swift in Sources */,
 				7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */,
 				7A9B846229ED4D8000F87CF4 /* MainViewController.swift in Sources */,
 				7A0D881829EFE871007513C0 /* TeamView.swift in Sources */,
