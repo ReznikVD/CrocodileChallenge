@@ -14,8 +14,6 @@ class TeamView: UIView {
 	private lazy var avatarImageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.image = UIImage(named: Resources.Images.cowboy)
-		imageView.clipsToBounds = true
-		layer.cornerRadius = 56 / 2
 		return imageView
 	}()
 	
@@ -117,7 +115,6 @@ private extension TeamView {
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
-		clipsToBounds = true
         layer.cornerRadius = 10
     }
 }

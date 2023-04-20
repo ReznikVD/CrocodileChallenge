@@ -167,7 +167,8 @@ extension GameViewController {
 
     @objc
     private func brokeRulesButtonAction() {
-        print("broke")
+        let vc = WrongViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc
