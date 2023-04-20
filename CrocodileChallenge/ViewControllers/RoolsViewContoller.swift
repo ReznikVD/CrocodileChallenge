@@ -12,22 +12,22 @@ class RoolsViewContoller: UIViewController {
     
     private lazy var rulesScrollView: UIScrollView = {
         let rulesScrollView = UIScrollView()
-        rulesScrollView.backgroundColor = .green
         rulesScrollView.translatesAutoresizingMaskIntoConstraints = false
-        
         return rulesScrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private lazy var rulesLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "КартоКартошкаКартошкаКартошка КартошкаКартошкаКартошка КартошкаКартошкаКартош каКартошкашк аартоКартошкаКартошкаКартошкаКарто шкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкашкаартоКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкашкаартоКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкаКартошкашка"
         label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        //label.sizeToFit()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .black
-        
         return label
     }()
     
@@ -43,6 +43,7 @@ class RoolsViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
+        rulesLabel.text = Rules.getRules()
     }
 }
     // MARK: - Private Extension
@@ -51,8 +52,9 @@ class RoolsViewContoller: UIViewController {
         
          func addSubviews() {
              view.addSubview(backgroundImage)
-             backgroundImage.addSubview(rulesScrollView)
-             rulesScrollView.addSubview(rulesLabel)
+             view.addSubview(rulesScrollView)
+             rulesScrollView.addSubview(contentView)
+             contentView.addSubview(rulesLabel)
              
              setupConstraints()
         }
@@ -64,15 +66,21 @@ class RoolsViewContoller: UIViewController {
                 backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
                 backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-                rulesScrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 95),
-                rulesScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-                rulesScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-                rulesScrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -15),
-
-                rulesLabel.topAnchor.constraint(equalTo: rulesScrollView.contentLayoutGuide.topAnchor, constant: 0),
-                rulesLabel.leadingAnchor.constraint(equalTo: rulesScrollView.contentLayoutGuide.leadingAnchor, constant: 0),
-                rulesLabel.trailingAnchor.constraint(equalTo: rulesScrollView.contentLayoutGuide.trailingAnchor)
+                rulesScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                rulesScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                rulesScrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                rulesScrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
                 
+                contentView.topAnchor.constraint(equalTo: rulesScrollView.topAnchor),
+                contentView.leadingAnchor.constraint(equalTo: rulesScrollView.leadingAnchor),
+                contentView.bottomAnchor.constraint(equalTo: rulesScrollView.bottomAnchor),
+                contentView.leadingAnchor.constraint(equalTo: rulesScrollView.leadingAnchor),
+                contentView.widthAnchor.constraint(equalTo: rulesScrollView.widthAnchor),
+
+                rulesLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+                rulesLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 7),
+                rulesLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -7),
+                rulesLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
                 
             ])
         }

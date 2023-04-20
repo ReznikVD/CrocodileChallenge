@@ -24,6 +24,7 @@
 		7A9B848429ED51D400F87CF4 /* RoolsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */; };
 		7AF7E23B29EEED4500CDD2F9 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */; };
 		7AF7E23E29EEEDD700CDD2F9 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */; };
+		7AFEF7E229F146250046846D /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFEF7E129F146250046846D /* Rules.swift */; };
 		8567A36029EFDCD900C0D9C5 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */; };
 		8E91DB4729ED950D0087DB00 /* Resourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4629ED950D0087DB00 /* Resourses.swift */; };
 		8E91DB4A29ED9C910087DB00 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E91DB4929ED9C910087DB00 /* CustomButton.swift */; };
@@ -49,6 +50,7 @@
 		7A9B848329ED51D400F87CF4 /* RoolsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoolsViewContoller.swift; sourceTree = "<group>"; };
 		7AF7E23A29EEED4500CDD2F9 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		7AF7E23D29EEEDD700CDD2F9 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamTableViewCell.swift; path = CrocodileChallenge/Views/Cells/TeamTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		7AFEF7E129F146250046846D /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
 		8567A35F29EFDCD900C0D9C5 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		8E91DB4629ED950D0087DB00 /* Resourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resourses.swift; sourceTree = "<group>"; };
 		8E91DB4929ED9C910087DB00 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				7A0D881929F0437D007513C0 /* Team.swift */,
 				7A0D881B29F04388007513C0 /* Category.swift */,
+				7AFEF7E129F146250046846D /* Rules.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				7A0D881829EFE871007513C0 /* TeamView.swift in Sources */,
 				7A9B845E29ED4D8000F87CF4 /* AppDelegate.swift in Sources */,
 				7A9B847C29ED501500F87CF4 /* GameViewController.swift in Sources */,
+				7AFEF7E229F146250046846D /* Rules.swift in Sources */,
 				7A9B846029ED4D8000F87CF4 /* SceneDelegate.swift in Sources */,
 				7A9B848229ED50B400F87CF4 /* GameResultViewController.swift in Sources */,
 			);
