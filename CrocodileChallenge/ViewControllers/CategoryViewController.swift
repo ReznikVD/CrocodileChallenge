@@ -41,6 +41,7 @@ class CategoryViewController: UIViewController {
     private lazy var currentCategory = categories[0]
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
+    private var manager = GameManager.shared
     
     // MARK: - Lifecycle
     

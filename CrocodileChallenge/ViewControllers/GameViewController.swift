@@ -8,8 +8,6 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    var timer = Timer()
-    var timeForGame = 60
 
     // MARK: - Subviews
 
@@ -72,7 +70,6 @@ class GameViewController: UIViewController {
         return stackView
     }()
 
-
     private lazy var rightButton: CustomButton = {
         let button = CustomButton(title: "Правильно", color: UIColor(named: Resources.Colors.green)!)
         return button
@@ -88,6 +85,12 @@ class GameViewController: UIViewController {
         let button = CustomButton(title: "Сбросить", color: UIColor(named: Resources.Colors.gray)!)
         return button
     }()
+    
+    // MARK: - Properties
+    
+    private var timer = Timer()
+    private var timeForGame = 60
+    private var manager = GameManager.shared
 
     // MARK: - Lifecycle
 

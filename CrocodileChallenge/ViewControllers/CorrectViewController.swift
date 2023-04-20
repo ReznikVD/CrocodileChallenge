@@ -44,6 +44,8 @@ class CorrectViewController: UIViewController {
     
     // MARK: - Properties
     
+    private var manager = GameManager.shared
+    
     // MARK: - Lifecycle
 	
     override func viewDidLoad() {

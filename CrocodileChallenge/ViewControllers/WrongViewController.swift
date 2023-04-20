@@ -42,6 +42,8 @@ class WrongViewController: UIViewController {
 	}()
 	
 	// MARK: - Properties
+    
+    private var manager = GameManager.shared
 	
 	// MARK: - Lifecycle
 	
