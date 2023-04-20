@@ -34,7 +34,7 @@ class GameViewController: UIViewController {
     private lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "60 секунд"
+        label.text = "01:00"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = .black
@@ -190,12 +190,22 @@ extension GameViewController {
     }
 
     @objc
-    func timerAction() {
+    private func timerAction() {
         timeForGame -= 1
-        print(timeForGame)
-        timerLabel.text = "\(timeForGame) секунд"
+        let totalTimeforGame = timeStringFor(seconds: timeForGame)
+        timerLabel.text = "\(totalTimeforGame)"
         if timeForGame == 0 {
             timer.invalidate()
+            let vc = WrongViewController()
+            show(vc, sender: self)
         }
+    }
+
+    func timeStringFor(seconds : Int) -> String {
+      let formatter = DateComponentsFormatter()
+      formatter.allowedUnits = [.second, .minute, .hour]
+      formatter.zeroFormattingBehavior = .pad
+      let output = formatter.string(from: TimeInterval(seconds))!
+      return seconds < 3600 ? output.substring(from: output.range(of: ":")!.upperBound) : output
     }
 }
