@@ -47,6 +47,7 @@ class GameResultViewController: UIViewController {
         super.viewDidAppear(animated)
         self.centerTitle()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
