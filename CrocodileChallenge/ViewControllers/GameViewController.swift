@@ -8,7 +8,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+    var timer = Timer()
+    var timeForGame = 60
+
     // MARK: - Subviews
     
     private lazy var backgroundImageView: UIImageView = {
@@ -32,7 +34,7 @@ class GameViewController: UIViewController {
     private lazy var timerLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "00:00"
+        label.text = "60 секунд"
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = .black
@@ -96,6 +98,8 @@ class GameViewController: UIViewController {
         configureButtons()
         
         navigationController?.isNavigationBarHidden = true
+
+        createTimer()
     }
 }
 
@@ -178,5 +182,20 @@ extension GameViewController {
         alert.addAction(cancelAction)
         alert.addAction(agreementAction)
         present(alert, animated: true)
+    }
+
+    private func createTimer() {
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+    }
+
+    @objc
+    func timerAction() {
+        timeForGame -= 1
+        print(timeForGame)
+        timerLabel.text = "\(timeForGame) секунд"
+        if timeForGame == 0 {
+            timer.invalidate()
+        }
     }
 }
