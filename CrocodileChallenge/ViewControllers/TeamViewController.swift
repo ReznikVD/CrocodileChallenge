@@ -45,13 +45,25 @@ class TeamViewController: UIViewController {
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     
-    // MARK: - Lifecycle
+
     
+    // MARK: - Lifecycle
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
         addViews()
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    // MARK: - Hide Back text
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Скрываем текст "Back"
+        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
@@ -60,12 +72,39 @@ class TeamViewController: UIViewController {
 private extension TeamViewController {
     
     func setupNavigationBar() {
-        navigationController?.isNavigationBarHidden = false
-        navigationItem.title = "Кто играет?"
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ]
+        
+        let titleView: UIView = {  // Собственный элемент типа UIView
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.clipsToBounds = true
+            return view
+        }()
+        
+        let titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = "Кто играет?"
+            label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+            label.textColor = .black
+            label.textAlignment = .center
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+        
+        titleView.addSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
+        ])
+        
+        navigationItem.titleView = titleView // Устанавливаем свой элемент в качестве заголовка панели навигации
+        navigationItem.hidesBackButton = false // Скрываем стандартную кнопку назад
+    }
+    
+    @objc private func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
     
     func addViews() {

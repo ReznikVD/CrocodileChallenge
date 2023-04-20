@@ -43,6 +43,8 @@ class CategoryViewController: UIViewController {
     private var spacingBetweenCells: CGFloat = 28
     private var manager = GameManager.shared
     
+ 
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -50,20 +52,80 @@ class CategoryViewController: UIViewController {
         
         setupNavigationBar()
         addViews()
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    // MARK: - Hide Back text
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Скрываем текст "Back"
+        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
 }
 
 // MARK: - Private Extension
 
 private extension CategoryViewController {
-    
     func setupNavigationBar() {
-        navigationItem.title = "Категории"
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ]
+        
+        let titleView: UIView = {// Собственный элемент типа UIView
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.clipsToBounds = true
+            return view
+        }()
+        
+        let titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = "Категории"
+            label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+            label.textColor = .black
+            label.textAlignment = .center
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+        
+//        let backButton: UIButton = {
+//            let button = UIButton() // Стрелка назад
+//            button.setImage(UIImage(named: "back_arrow"), for: .normal)
+//            button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+//            button.translatesAutoresizingMaskIntoConstraints = false
+//            button.tintColor = .systemBlue
+//            return button
+//        }()
+        
+        titleView.addSubview(titleLabel)
+  //      titleView.addSubview(backButton)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
+            
+//            backButton.topAnchor.constraint(equalTo: titleView.topAnchor, constant: 5),
+//            backButton.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -5),
+//            backButton.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: 10)
+        ])
+        
+               navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.titleView = titleView // Устанавливаем свой элемент в качестве заголовка панели навигации
+        navigationItem.hidesBackButton = false // Скрываем стандартную кнопку назад
     }
+//    func setupNavigationBar() {
+//        navigationItem.title = "Категории"
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationItem.largeTitleDisplayMode = .always
+//        navigationController?.navigationBar.largeTitleTextAttributes = [
+//            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
+//            NSAttributedString.Key.foregroundColor: UIColor.black
+//        ]
+//
+//        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+//        navigationItem.backBarButtonItem = backButton
+//    }
     
     func addViews() {
         view.addSubview(backgroundImage)
