@@ -94,6 +94,7 @@ private extension CategoryViewController {
     }
     
     @objc func startButtonPressed(_ sender: UIButton) {
+        manager.setCategory(currentCategory)
         let vc = GameViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
