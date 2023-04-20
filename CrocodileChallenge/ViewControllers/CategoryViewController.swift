@@ -50,7 +50,6 @@ class CategoryViewController: UIViewController {
         setupNavigationBar()
         addViews()
     }
-    
 }
 
 // MARK: - Private Extension
@@ -120,6 +119,8 @@ extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // TODO: - change current category and reload table view
+        currentCategory = categories[indexPath.row]
+        tableView.reloadData()
     }
 }
 
