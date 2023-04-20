@@ -31,6 +31,7 @@ class GameResultViewController: UIViewController {
     
     private lazy var restartButton: CustomButton = {
         let button = CustomButton(title: "Начать сначала", color: UIColor(named: Resources.Colors.green)!)
+        button.addTarget(self, action: #selector(restartButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -40,6 +41,7 @@ class GameResultViewController: UIViewController {
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     private var titleText = "Результаты"
+    private var manager = GameManager.shared
     
     // MARK: - Lifecycle
     
@@ -97,6 +99,11 @@ private extension GameResultViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
         ])
+    }
+    
+    @objc func restartButtonPressed(_ sender: UIButton) {
+        manager.reset()
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 
