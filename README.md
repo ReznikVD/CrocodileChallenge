@@ -16,8 +16,13 @@
 
 <p align="center">
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500"/>
-<img src="./Images/petulia-showcase-tinified 2.png" height="500"/>
-<img src="./Images/petulia-showcase-tinified 3.png" height="500"/>
-<img src="./Images/petulia-showcase-tinified 4.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/GameVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CorrectVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/WrongVC.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="500"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="500"/>
 </p>
 
