@@ -20,6 +20,7 @@ struct Category {
             Category(avatar: Resources.Images.nails, title: "Хобби", color: Resources.Colors.red)
         ]
     }
+}
 
     enum typeCategory: String {
         case animal = "Животные"
@@ -135,5 +136,16 @@ struct Category {
                 ]
             }
         }
+
+        func getActions() -> [String] {
+            return [
+                "Объясни с помощью слов",
+                "Объясни с помощью жестов",
+                "Объясни с помощью рисунка",
+                "Объясняй со злостью",
+                "Объясняй с помощью мимики",
+                "Объясняй вульгарно",
+                "Объясняй сексуально"
+            ]
+        }
     }
-}
