@@ -12,6 +12,23 @@
 <img src="https://img.shields.io/badge/No storyboard-purple" alt="MVC" /></a>
 </p>
 
+## Developers
+
+<p align="left"> 
+<a href="https://github.com/ReznikVD">
+<img src="https://img.shields.io/badge/ReznikVD-red"/></a>
+<a href="https://github.com/dmitrii-nzrv">
+<img src="https://img.shields.io/badge/dmitrii-red"/></a>
+<a href="https://github.com/iosDevelopForYou">
+<img src="https://img.shields.io/badge/iosDevelopForYou-red"/></a>
+<a href="https://github.com/Sosisya">
+<img src="https://img.shields.io/badge/Luiza-red"/></a>
+<a href="https://github.com/VasiliStaratsitarau">
+<img src="https://img.shields.io/badge/VasiliStaratsitarau-red"/></a>
+<a href="https://github.com/vsiisv">
+<img src="https://img.shields.io/badge/vsiisv-red"/></a>
+</p>
+
 ## About The Project
 
 | Main View Controller | Rools View Controller | Team View Controller |
