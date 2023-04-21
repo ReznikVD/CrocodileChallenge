@@ -29,7 +29,7 @@ enum Resources {
         static let burger = "burger"
         static let frog = "frog"
         static let nails = "nails"
-        static let circle = "circle"
+        static let circle = "Circle"
         static let check = "check"
     }
 }
