@@ -34,6 +34,11 @@ class GameResultViewController: UIViewController {
         return button
     }()
     
+    private lazy var teamView: TeamView = {
+        let view = TeamView()
+        return view
+    }()
+    
     // MARK: - Properties
     
     private var teams = Team.getTeam()
@@ -47,13 +52,13 @@ class GameResultViewController: UIViewController {
         super.viewDidAppear(animated)
         self.centerTitle()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupNavigationBar()
         addViews()
+        setupConstraints()
     }
-    
 }
 
 // MARK: - Private Extension
@@ -75,9 +80,7 @@ private extension GameResultViewController {
         view.sendSubviewToBack(backgroundImage)
         view.addSubview(restartButton)
         view.addSubview(tableView)
-        
-        setupConstraints()
-    }
+        }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
@@ -119,7 +122,7 @@ extension GameResultViewController: UITableViewDataSource {
     }
 }
 
-
+// MARK: - The "Result" label is shown in the centre of the view.
 
 extension UIViewController{
     func centerTitle(){
