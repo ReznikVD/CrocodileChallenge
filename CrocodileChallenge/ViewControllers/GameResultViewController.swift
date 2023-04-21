@@ -49,21 +49,11 @@ class GameResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-		    teams = [manager.getCurrentTeam(), manager.getNextTeam()]
+        teams = [manager.getCurrentTeam(), manager.getNextTeam()]
         navigationController?.isNavigationBarHidden = false
         setupNavigationBar()
         addViews()
     }
-    
-    // MARK: - Hide Back text
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Скрываем текст "Back"
-        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = backButton
-    }
-    
 }
 
 // MARK: - Private Extension
@@ -138,9 +128,19 @@ private extension GameResultViewController {
 	}
 	
     @objc func restartButtonPressed(_ sender: UIButton) {
-        let teamVC = TeamViewController()
-        navigationController?.pushViewController(teamVC, animated: true)
+        
         manager.reset()
+        
+        guard let viewControllers = navigationController?.viewControllers else {
+            navigationController?.popToRootViewController(animated: true)
+            return
+        }
+        
+        for vc in viewControllers {
+            if vc.isKind(of: TeamViewController.self) {
+                navigationController?.popToViewController(vc, animated: true)
+            }
+        }
     }
 }
 
