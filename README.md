@@ -16,7 +16,7 @@
 
 <p align="center">
 <figure>
-  <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MaifnVC.png" height="500">
+  <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500">
   <figcaption>Main View Controller</figcaption>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500"/>
 <figcaption>Rools View Controller</figcaption>
