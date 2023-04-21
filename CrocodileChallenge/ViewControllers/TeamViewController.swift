@@ -100,7 +100,7 @@ private extension TeamViewController {
         ])
         
         navigationItem.titleView = titleView // Устанавливаем свой элемент в качестве заголовка панели навигации
-        navigationItem.hidesBackButton = false // Скрываем стандартную кнопку назад
+        navigationItem.hidesBackButton = false 
     }
     
     @objc private func backButtonTapped() {
