@@ -16,18 +16,15 @@
 
 <p align="center">
 <figure>
-  <img
-  src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500" 
-  alt="Main View Controller">
-  <figcaption></figcaption>
+  <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500" alt="Main View Controller">
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500" alt="Rools View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="500" alt="Team View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="500" alt="Category View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/GameVC.png" height="500" alt="Game View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CorrectVC.png" height="500" alt="Correct View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/WrongVC.png" height="500" alt="Wrong View Controller"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="500" alt="Alert Demo"/>
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="500" alt="Game Result View Controller"/>
 </figure>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/GameVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CorrectVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/WrongVC.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="500"/>
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="500"/>
 </p>
 
