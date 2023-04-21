@@ -14,5 +14,10 @@
 
 ## About The Project
 
-![Alt text](https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png "Main View Controller")
+<p align="center">
+<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500"/>
+<img src="./Images/petulia-showcase-tinified 2.png" height="500"/>
+<img src="./Images/petulia-showcase-tinified 3.png" height="500"/>
+<img src="./Images/petulia-showcase-tinified 4.png" height="500"/>
+</p>
 
