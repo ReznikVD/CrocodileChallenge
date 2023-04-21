@@ -16,7 +16,7 @@
 
 <p align="center">
 <figure>
-  <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500" alt="Main View Controller">
+  <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MaifnVC.png" height="500" alt="Main View Controller">
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500" alt="Rools View Controller"/>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="500" alt="Team View Controller"/>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="500" alt="Category View Controller"/>
