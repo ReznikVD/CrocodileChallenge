@@ -15,7 +15,12 @@
 ## About The Project
 
 <p align="center">
-<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500" alt="The beautiful MDN logo."/>
+<figure>
+  <img
+  src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500" 
+  alt="Main View Controller">
+  <figcaption></figcaption>
+</figure>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="500"/>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="500"/>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="500"/>
