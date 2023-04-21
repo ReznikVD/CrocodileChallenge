@@ -91,6 +91,8 @@ class GameViewController: UIViewController {
     private var timer = Timer()
     private var timeForGame = 60
     private var manager = GameManager.shared
+    private lazy var words = Words(category: manager.getCurrentCategory()).getWords()
+    private lazy var actions = Words(category: manager.getCurrentCategory()).getActions()
 
     // MARK: - Lifecycle
 
@@ -106,6 +108,7 @@ class GameViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createTimer()
+        setTitleLabel()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -145,7 +148,7 @@ extension GameViewController {
             timerLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             timerLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
 
-            wordLabel.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 94),
+            wordLabel.topAnchor.constraint(equalTo: timerLabel.bottomAnchor, constant: 50),
             wordLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             wordLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
 
@@ -203,7 +206,7 @@ extension GameViewController {
 
     private func createTimer() {
         timerLabel.text = "01:00"
-        timeForGame = 5
+        timeForGame = 60
         timer.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
@@ -221,10 +224,20 @@ extension GameViewController {
     }
 
     func timeStringFor(seconds : Int) -> String {
-      let formatter = DateComponentsFormatter()
-      formatter.allowedUnits = [.second, .minute, .hour]
-      formatter.zeroFormattingBehavior = .pad
-      let output = formatter.string(from: TimeInterval(seconds))!
-      return seconds < 3600 ? output.substring(from: output.range(of: ":")!.upperBound) : output
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour]
+        formatter.zeroFormattingBehavior = .pad
+        let output = formatter.string(from: TimeInterval(seconds))!
+        return seconds < 3600 ? output.substring(from: output.range(of: ":")!.upperBound) : output
+    }
+
+    func setTitleLabel() {
+        if words.isEmpty {
+            let vc = GameResultViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        } else if let index = words.indices.randomElement() {
+            wordLabel.text = words.remove(at: index)
+        }
+        taskLabel.text = actions.randomElement()
     }
 }
