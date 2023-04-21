@@ -38,3 +38,19 @@
 | Main View Controller | Rools View Controller | Team View Controller | Category View Controller | Game View Controller | Correct View Controller | Wrong View Controller | Alert Demo | Game Result View Controller |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="300">|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/GameVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CorrectVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/WrongVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="300"/>|
+
+| Main View Controller | Rools View Controller |
+| --- | --- |
+| <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="300">|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/RoolsVC.png" height="300"/>|
+
+| Team View Controller | Category View Controller |
+| --- | --- |
+|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/TeamVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CategoryVC.png" height="300"/>|
+
+| Game View Controller | Alert Demo |
+| --- | --- |
+|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/GameVC.png" height="300"/>| <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="300"/>|
+
+| Correct View Controller | Wrong View Controller | Game Result View Controller 
+| --- | --- | --- |
+|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/CorrectVC.png" height="300"/>|<img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/WrongVC.png" height="300"/>| <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="300"/>|
