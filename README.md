@@ -1,2 +1,2 @@
-![some](https://github.com/ReznikVD/CrocodileChalenge/raw/main/screenshots/logo.png)
+![](https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/logo.png)
 # CrocodileChallenge
