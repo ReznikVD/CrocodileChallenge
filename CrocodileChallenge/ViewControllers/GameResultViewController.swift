@@ -49,7 +49,7 @@ class GameResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.isNavigationBarHidden = false
         setupNavigationBar()
         addViews()
     }
@@ -98,7 +98,7 @@ private extension GameResultViewController {
         ])
         
         navigationItem.titleView = titleView // Устанавливаем свой элемент в качестве заголовка панели навигации
-        navigationItem.hidesBackButton = false
+        navigationItem.hidesBackButton = true
     }
     
     func addViews() {
@@ -132,6 +132,7 @@ private extension GameResultViewController {
     @objc func restartButtonPressed(_ sender: UIButton) {
         let teamVC = TeamViewController()
         navigationController?.pushViewController(teamVC, animated: true)
+        manager.reset()
     }
 }
 
