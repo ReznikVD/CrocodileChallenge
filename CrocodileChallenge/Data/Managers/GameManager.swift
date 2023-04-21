@@ -16,7 +16,7 @@ class GameManager {
     private var currentTeam = Team.getTeam()[0]
     private var nextTeam = Team.getTeam()[1]
     private var currentCategory = Category.getCategories()[0]
-    private var numberOfRounds = 5
+    private var numberOfRounds = 10
     
     func getCurrentTeam() -> Team {
         return currentTeam
