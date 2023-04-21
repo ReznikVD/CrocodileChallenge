@@ -35,6 +35,32 @@ class TeamTableViewCell: UITableViewCell {
         return label
     }()
     
+	lazy var pointLabel: UILabel = {
+			let label = UILabel()
+			label.font = UIFont(name: "Arial Rounded MT Bold", size: 55)
+			label.minimumScaleFactor = 0.5
+			label.adjustsFontSizeToFitWidth = true
+			label.textAlignment = .center
+			return label
+		}()
+		
+		private lazy var captionPointsLabel: UILabel = {
+			let label = UILabel()
+			label.font = UIFont.systemFont(ofSize: 15)
+			label.textAlignment = .center
+			return label
+		}()
+		
+		private lazy var pointsStackView: UIStackView = {
+			let stackView = UIStackView()
+			stackView.axis = .vertical
+			stackView.alignment = .fill
+			stackView.distribution = .fillProportionally
+			stackView.spacing = 0
+			stackView.translatesAutoresizingMaskIntoConstraints = false
+			return stackView
+		}()
+	
     // MARK: - Properties
     
     // MARK: - Lifecycle
@@ -60,7 +86,9 @@ private extension TeamTableViewCell {
         addSubview(containerView)
         containerView.addSubview(avatarIcon)
         containerView.addSubview(cellLabel)
-        
+		containerView.addSubview(pointsStackView)
+		pointsStackView.addArrangedSubview(pointLabel)
+		pointsStackView.addArrangedSubview(captionPointsLabel)
         setupConstraints()
     }
     
@@ -78,7 +106,11 @@ private extension TeamTableViewCell {
             
             cellLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 37),
             cellLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -37),
-            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor)
+            cellLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+	
+			pointsStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8),
+			pointsStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -8),
+			pointsStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -8)
         ])
     }
 }
@@ -90,4 +122,11 @@ extension TeamTableViewCell {
         avatarIcon.image = UIImage(named: team.avatar)!
         cellLabel.text = team.name
     }
+	
+	func setupCellResult(team: Team) {
+		avatarIcon.image = UIImage(named: team.avatar)
+		cellLabel.text = team.name
+		pointLabel.text = String(team.score)
+		captionPointsLabel.text = "Очки"
+	}
 }
