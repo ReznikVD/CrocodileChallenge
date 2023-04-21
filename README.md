@@ -15,7 +15,6 @@
 ## About The Project
 
 <p align="center">
-<figure>
 <figcaption>Main View Controller</figcaption>
   <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/MainVC.png" height="500">  
 <figcaption>Rools View Controller</figcaption>
@@ -34,7 +33,6 @@
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/DemoAlert.png" height="500"/>
 <figcaption>Game Result View Controller</figcaption>
 <img src="https://github.com/ReznikVD/CrocodileChallenge/blob/main/screenshots/ResultVC.png" height="500"/>
-</figure>
 </p>
 
 
