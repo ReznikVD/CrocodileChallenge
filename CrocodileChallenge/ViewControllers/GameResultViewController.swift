@@ -37,7 +37,7 @@ class GameResultViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var teams = Team.getTeam()
+    private var teams = [Team]()
     private var heightOfCell: CGFloat = 96
     private var spacingBetweenCells: CGFloat = 28
     private var titleText = "Результаты"
@@ -49,6 +49,7 @@ class GameResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		    teams = [manager.getCurrentTeam(), manager.getNextTeam()]
         navigationController?.isNavigationBarHidden = false
         setupNavigationBar()
         addViews()
@@ -129,6 +130,13 @@ private extension GameResultViewController {
         ])
     }
     
+	func sortedTeam() -> [Team] {
+		let sortedTeams = teams.sorted { score1, score2 in
+			score1.score > score2.score
+		}
+		return sortedTeams
+	}
+	
     @objc func restartButtonPressed(_ sender: UIButton) {
         let teamVC = TeamViewController()
         navigationController?.pushViewController(teamVC, animated: true)
@@ -146,7 +154,8 @@ extension GameResultViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.identifier, for: indexPath) as! TeamTableViewCell
-        cell.setupCell(team: teams[indexPath.row])
+		let sortedTeams = sortedTeam()
+        cell.setupCellResult(team: sortedTeams[indexPath.row])
         return cell
     }
     
@@ -167,4 +176,3 @@ extension GameResultViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     }
 }
-
