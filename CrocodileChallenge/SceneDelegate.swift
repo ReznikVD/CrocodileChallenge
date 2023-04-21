@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let scene = (scene as? UIWindowScene) else { return }
         
-        let viewController = MainViewController()
+        let viewController = GameResultViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
         
         window = UIWindow(windowScene: scene)

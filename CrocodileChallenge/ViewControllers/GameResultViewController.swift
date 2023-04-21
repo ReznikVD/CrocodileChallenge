@@ -45,16 +45,22 @@ class GameResultViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.centerTitle()
-    }
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupNavigationBar()
         addViews()
+    }
+    
+    // MARK: - Hide Back text
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Скрываем текст "Back"
+        let backButton = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
     }
     
 }
@@ -64,13 +70,35 @@ class GameResultViewController: UIViewController {
 private extension GameResultViewController {
     
     func setupNavigationBar() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-        navigationItem.title = titleText
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold),
-            NSAttributedString.Key.foregroundColor: UIColor.black
-        ]
+        
+        let titleView: UIView = {  // Собственный элемент типа UIView
+            let view = UIView()
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.clipsToBounds = true
+            return view
+        }()
+        
+        let titleLabel: UILabel = {
+            let label = UILabel()
+            label.text = titleText
+            label.font = UIFont.systemFont(ofSize: 34, weight: .bold)
+            label.textColor = .black
+            label.textAlignment = .center
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+        
+        titleView.addSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: titleView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor),
+        ])
+        
+        navigationItem.titleView = titleView // Устанавливаем свой элемент в качестве заголовка панели навигации
+        navigationItem.hidesBackButton = false
     }
     
     func addViews() {
@@ -102,8 +130,8 @@ private extension GameResultViewController {
     }
     
     @objc func restartButtonPressed(_ sender: UIButton) {
-        manager.reset()
-        navigationController?.popToRootViewController(animated: true)
+        let teamVC = TeamViewController()
+        navigationController?.pushViewController(teamVC, animated: true)
     }
 }
 
@@ -139,15 +167,3 @@ extension GameResultViewController: UITableViewDelegate {
     }
 }
 
-extension UIViewController{
-    func centerTitle(){
-        for navItem in(self.navigationController?.navigationBar.subviews)! {
-             for itemSubView in navItem.subviews {
-                 if let resultLabel = itemSubView as? UILabel {
-                    resultLabel.center = CGPoint(x: navItem.bounds.width/2, y: navItem.bounds.height/2)
-                    return;
-                 }
-             }
-        }
-    }
-}
